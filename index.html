@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motivationsschreiben Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Motivationsschreiben Generator</h1>
+      <p class="subtitle">Erstelle ein professionelles Motivationsschreiben mit KI</p>
+    </header>
+
+    <main>
+      <section class="form-section">
+        <form id="form">
+          <div class="grid-2">
+            <div class="field">
+              <label for="vorname">Vorname</label>
+              <input type="text" id="vorname" placeholder="Max" required />
+            </div>
+            <div class="field">
+              <label for="nachname">Nachname</label>
+              <input type="text" id="nachname" placeholder="Mustermann" required />
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="stelle">Stelle / Position</label>
+              <input type="text" id="stelle" placeholder="Softwareentwickler" required />
+            </div>
+            <div class="field">
+              <label for="unternehmen">Unternehmen</label>
+              <input type="text" id="unternehmen" placeholder="Muster GmbH" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="skills">Fähigkeiten & Kenntnisse</label>
+            <textarea id="skills" rows="3" placeholder="z.B. Python, Projektmanagement, 3 Jahre Erfahrung in der Softwareentwicklung..." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="motivation">Warum diese Stelle / dieses Unternehmen?</label>
+            <textarea id="motivation" rows="3" placeholder="z.B. Ich interessiere mich für innovative Technologien und schätze die agile Arbeitsweise des Unternehmens..." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="extras">Weitere Infos (optional)</label>
+            <textarea id="extras" rows="2" placeholder="z.B. Verfügbar ab Juni, Umzug geplant, Auslandserfahrung..."></textarea>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="sprache">Sprache</label>
+              <select id="sprache">
+                <option value="Deutsch">Deutsch</option>
+                <option value="Englisch">Englisch</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="ton">Ton</label>
+              <select id="ton">
+                <option value="professionell und formell">Professionell & Formell</option>
+                <option value="freundlich und modern">Freundlich & Modern</option>
+                <option value="selbstbewusst und direkt">Selbstbewusst & Direkt</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" id="generateBtn">
+            <span id="btnText">Motivationsschreiben generieren</span>
+            <span id="btnSpinner" class="spinner hidden"></span>
+          </button>
+        </form>
+      </section>
+
+      <section class="result-section" id="resultSection">
+        <div class="result-header">
+          <h2>Dein Motivationsschreiben</h2>
+          <button class="copy-btn" id="copyBtn" title="Kopieren">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Kopieren
+          </button>
+        </div>
+        <div id="result" class="result-text"></div>
+        <div id="errorBox" class="error-box hidden"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
